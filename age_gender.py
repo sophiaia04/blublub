@@ -103,12 +103,10 @@ class VideoTransformer(VideoTransformerBase):
 
 
 
-# Button to start Age and Gender Estimation
-if st.button("Age and Gender Estimation", use_container_width=True):
-    # Use webrtc_streamer to process video stream
-    webrtc_streamer(key="age_gender_estimation", 
-                    video_processor_factory=VideoTransformer, 
-                    rtc_configuration=RTC_CONFIGURATION)
+# Use webrtc_streamer to process video stream
+webrtc_streamer(key="age_gender_estimation", 
+                video_processor_factory=VideoTransformer, 
+                rtc_configuration=RTC_CONFIGURATION)
 
 
 # More Info section with buttons
