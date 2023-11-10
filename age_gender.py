@@ -43,7 +43,7 @@ def get_face_box(net, frame, conf_threshold=0.7):
 # Streamlit UI elements and configuration
 st.image("logo.png")  # Display a logo image
 st.title("Play with AI Models")
-st.write("Play with some AI models that leverage GPU computation, all running on the below server!")
+st.write("Play with some AI models that leverage GPU computation. - Age and Gender Estimation")
 
 # Paths to pre-trained models
 face_txt_path = "opencv_face_detector.pbtxt"
@@ -112,9 +112,17 @@ webrtc_streamer(key="age_gender_estimation",
 # More Info section with buttons
 st.write("More Info")
 col1, col2 = st.columns(2)
+
 with col1:
-    if st.button("Check out our website!", use_container_width=True):
-        webbrowser.open_new_tab("https://lac2.org")
+    st.markdown("""
+        <a href="https://lac2.org" target="_blank">
+            <button style='width:100%; height:40px;'>Check out our website!</button>
+        </a>
+        """, unsafe_allow_html=True)
 with col2:
-    if st.button("Book an appointment with our AI Hub Manager!", use_container_width=True):
-        webbrowser.open_new_tab("https://www.typecalendar.com/wp-content/uploads/2022/12/December-2023-Calendar.jpg")
+    st.markdown("""
+        <a href="https://www.typecalendar.com/wp-content/uploads/2022/12/December-2023-Calendar.jpg" target="_blank">
+            <button style='width:100%; height:40px;'>Book an appointment with our AI Hub Manager!</button>
+        </a>
+        """, unsafe_allow_html=True)
+
